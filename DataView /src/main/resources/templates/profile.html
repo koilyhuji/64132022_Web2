@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thông tin Sinh viên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .info {
+            text-align: left;
+            font-size: 16px;
+        }
+        .info p {
+            background: #ecf0f1;
+            padding: 8px;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+        .label {
+            font-weight: bold;
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 th:text="${tb}"></h2>
+        <div class="info">
+            <p><span class="label">Họ Tên:</span> <span th:text="${hoTen}"></span></p>
+            <p><span class="label">Năm Sinh:</span> <span th:text="${namSinh}"></span></p>
+            <p><span class="label">Giới Tính:</span> <span th:text="${gioiTinh}"></span></p>
+        </div>
+    </div>
+</body>
+</html>
