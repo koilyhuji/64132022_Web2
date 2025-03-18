@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.pgq.Models.User;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 @Controller
 @RequestMapping("/login")
 public class LoginController {
@@ -30,9 +32,10 @@ public class LoginController {
 	
 	@PostMapping
 	public String processLogin
-	(@RequestParam String id,
-	 @RequestParam String password, 
+	(HttpServletRequest request,
 	 ModelMap m) {
+		String id = request.getParameter("user");
+		String password = request.getParameter("password");
 		User user = findUser(id, password);
 		if(id.equals(user.getId()) && password.equals(user.getPassword())) {
 			m.addAttribute("message","Đăng nhập thành công");
