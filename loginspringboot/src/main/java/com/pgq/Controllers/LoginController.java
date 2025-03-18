@@ -34,17 +34,14 @@ public class LoginController {
 	 @RequestParam String password, 
 	 ModelMap m) {
 		User user = findUser(id, password);
-
-        
-
-			if(id.equals("666") && password.equals("2233232")) {
-				m.addAttribute("message","Đăng nhập thành công");
-				return "redirect:/home";
-			}
-			else {
-				m.addAttribute("message","Sai thông tin đăng nhập");
-			}
-			return "login";
+		if(id.equals(user.getId()) && password.equals(user.getPassword())) {
+			m.addAttribute("message","Đăng nhập thành công");
+			return "redirect:/home";
+		}
+		else {
+			m.addAttribute("message","Sai thông tin đăng nhập");
+		}
+		return "login";
 	}
 	private User findUser(String id, String password) {
         for (User user : users) {
