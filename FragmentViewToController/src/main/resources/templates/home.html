@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/home" method="post">
+    <input type="text" name="hoTen" placeholder="Nhập tên của bạn">
+    <button type="submit">Gửi</button>
+</form>
+
+<p th:if="${message}" th:text="${message}" style="color: red;"></p>
+<p>Tên bạn nhập: <span th:text="${hoTen}"></span></p>
+
+</body>
+</html>
