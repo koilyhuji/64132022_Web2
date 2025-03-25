@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="2" width=100%>
+		<tr height=100px>
+			<td colspan="2"> 
+				<div th:replace ="FrontEnd::dauTrang"></div>  
+			</td>
+		</tr>
+		<tr height=450px>
+			<td width="800px"> index
+			
+			
+			</td> 
+			 <td> <div th:replace ="FrontEnd::sideBar"></div>  
+			 </td>
+		</tr>
+		<tr><td colspan="2"> <div th:replace ="FrontEnd::chanTrang"></div>  
+			 </td>  </tr>
+	</table>
+</body>
+</html>
