@@ -1,16 +1,16 @@
 package thiGK.ntu64132022.PhamGiaQuynh_thigk.model;
 
 public class Page {
-    private Long id;
+    private int id;
     private String pageName;
     private String keyword;
     private String content;
-    private Long parentPageId;
+    private int parentPageId;
 
     public Page() {
     }
 
-    public Page(Long id, String pageName, String keyword, String content, Long parentPageId) {
+    public Page(int id, String pageName, String keyword, String content, int parentPageId) {
         this.id = id;
         this.pageName = pageName;
         this.keyword = keyword;
@@ -18,11 +18,11 @@ public class Page {
         this.parentPageId = parentPageId;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -50,11 +50,11 @@ public class Page {
         this.content = content;
     }
 
-    public Long getParentPageId() {
+    public int getParentPageId() {
         return parentPageId;
     }
 
-    public void setParentPageId(Long parentPageId) {
+    public void setParentPageId(int parentPageId) {
         this.parentPageId = parentPageId;
     }
 }
