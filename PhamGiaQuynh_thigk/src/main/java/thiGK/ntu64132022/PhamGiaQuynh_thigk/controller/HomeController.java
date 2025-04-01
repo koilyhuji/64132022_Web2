@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -36,9 +37,24 @@ public class HomeController {
 	}
 	
 	@GetMapping("/page/all")
-    public String pageall(){
-
+    public String pageall(ModelMap modelmap){
+        modelmap.addAttribute("Pages", Pages);
         return "pageall";
+    }
+
+    @GetMapping("/page/new")
+    public String shownewForm(ModelMap model) {
+        
+        return "pagenew";
+    }
+
+    @PostMapping("/page/new")
+    public String addPage(@ModelAttribute Page page) {
+        
+        int newId = Pages.stream().mapToInt(Page::getId).max().orElse(0) + 1;
+        page.setId(newId);
+        Pages.add(page);
+        return "redirect:/page/all";
     }
 
 }
