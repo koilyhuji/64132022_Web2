@@ -16,45 +16,15 @@ import thiGK.ntu64132022.PhamGiaQuynh_thigk.model.Post;
 
 @Controller
 public class HomeController {
-    public List<Page> Pages = new ArrayList<>(Arrays.asList(
-        new Page(1, "pagenam1", "keyword1", "conethineo noi ehnt oiwehoi wenioe noingio oiengo", 1),
-        new Page(2, "pagenam2", "keyword1", "conethineo noi ehnt oiwehoi wenioe noingio oiengo", 1),
-        new Page(3, "pagenam3", "keyword2", "conethineo noi ehnt oiwehoi wenioe noingio oiengo", 2),
-        new Page(4, "pagenam4", "keyword2", "conethineo noi ehnt oiwehoi wenioe noingio oiengo", 3)
-        
-    ));
-
-    public List<Post> Posts = new ArrayList<>(Arrays.asList(
-        new Post(1,"title1", "lorem isum ordor i nfoie iehjfi weiufwhe fiwenfi jifwehf iwenfie fniefn c",1),
-        new Post(2,"title2", "lorem isum ordor i nfoie iehjfi weiufwhe fiwenfi jifwehf iwenfie fniefn c",1),
-        new Post(3,"title3", "lorem isum ordor i nfoie iehjfi weiufwhe fiwenfi jifwehf iwenfie fniefn c",1),
-        new Post(4,"title4", "lorem isum ordor i nfoie iehjfi weiufwhe fiwenfi jifwehf iwenfie fniefn c",1),
-        new Post(5,"title5", "lorem isum ordor i nfoie iehjfi weiufwhe fiwenfi jifwehf iwenfie fniefn c",1)
-    ));
+    
+    
 	@GetMapping("/")
 	public String trangChu() {
 		return "home";
 	}
 	
-	@GetMapping("/page/all")
-    public String pageall(ModelMap modelmap){
-        modelmap.addAttribute("Pages", Pages);
-        return "pageall";
-    }
+	
 
-    @GetMapping("/page/new")
-    public String shownewForm(ModelMap model) {
-        
-        return "pagenew";
-    }
-
-    @PostMapping("/page/new")
-    public String addPage(@ModelAttribute Page page) {
-        
-        int newId = Pages.stream().mapToInt(Page::getId).max().orElse(0) + 1;
-        page.setId(newId);
-        Pages.add(page);
-        return "redirect:/page/all";
-    }
+   
 
 }

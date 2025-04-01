@@ -35,26 +35,23 @@
                 <div th:replace="~{layout :: navbar}"></div>
                 
                 <main class="main-content">
-                    <form action="/page/new"  method="post">
+                    <form action="/post/new"  method="post">
                         <div>
-                            <label>Page Name:</label>
-                            <input type="text" name="pagename" required>
+                            <label>post title:</label>
+                            <input type="text" name="title" required>
                         </div>
-                        <div>
-                            <label>Keyword:</label>
-                            <input type="text" name="keyword">
-                        </div>
+                      
                         <div>
                             <label>Content:</label>
                             <textarea name="content" rows="5"></textarea>
                         </div>
                         <div>
-                            <label>Parent Page ID:</label>
-                            <input type="number" name="pageParentId">
+                            <label>category:</label>
+                            <input type="number" name="categoryId">
                         </div>
                         <div>
                             <button type="submit">Save</button>
-                            <a th:href="@{/page/all}">Cancel</a>
+                            <a th:href="@{/post/all}">Cancel</a>
                         </div>
                     </form>
                 </main>
