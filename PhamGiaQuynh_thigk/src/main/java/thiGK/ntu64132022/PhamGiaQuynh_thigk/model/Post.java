@@ -1,26 +1,26 @@
 package thiGK.ntu64132022.PhamGiaQuynh_thigk.model;
 
 public class Post {
-    private Long id;
+    private int id;
     private String title;
     private String content;
-    private Long categoryId;
+    private int categoryId;
 
     public Post() {
     }
 
-    public Post(Long id, String title, String content, Long categoryId) {
+    public Post(int id, String title, String content, int categoryId) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.categoryId = categoryId;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -40,11 +40,11 @@ public class Post {
         this.content = content;
     }
 
-    public Long getCategoryId() {
+    public int getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(Long categoryId) {
+    public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
     }
 }
