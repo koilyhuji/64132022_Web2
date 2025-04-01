@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | <th:block th:text="${title}">Default Title</th:block></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .sidebar {
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+        }
+        .sidebar-banner {
+            color: white;
+            padding: 1rem;
+        }
+        .main-content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-3 col-lg-2 d-md-block sidebar p-0">
+                <div th:replace="~{layout :: sidebar-banner}"></div>
+                <div th:replace="~{layout :: sidebar-menu}"></div>
+            </div>
+
+            <div class="col-md-9 col-lg-10 ms-sm-auto px-0">
+                <div th:replace="~{layout :: navbar}"></div>
+                
+                <main class="main-content">
+                    
+                    <div class="di">contnet</div>
+                </main>
+                
+                <div th:replace="~{layout :: footer}"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
