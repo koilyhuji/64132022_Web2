@@ -61,9 +61,9 @@
                                     <td th:text="${page.pageName}">Page Name</td>
                                     <td th:text="${page.parentPageId}">0</td>
                                     <td>
-                                        <a th:href="@{/pages/view/} + ${page.id}">View</a>
-                                        <a th:href="@{/pages/edit/} + ${page.id}" >Edit</a>
-                                        <a th:href="@{/pages/delete/} + ${page.id}" >Delete</a>
+                                        <a th:href="@{/page/view/} + ${page.id}">View</a>
+                                        <a th:href="@{/page/edit/} + ${page.id}" >Edit</a>
+                                        <a th:href="@{/page/delete/} + ${page.id}" >Delete</a>
                                     </td>
                                 </tr>
                             </tbody>
