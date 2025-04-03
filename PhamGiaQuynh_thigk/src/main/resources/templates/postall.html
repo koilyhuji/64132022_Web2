@@ -59,11 +59,11 @@
                                 <tr th:each="post : ${posts}">
                                     <td th:text="${post.id}">1</td>
                                     <td th:text="${post.title}">post Name</td>
-                                    <td th:text="${post.category}">0</td>
+                                    <td th:text="${post.categoryId}">0</td>
                                     <td>
-                                        <a th:href="@{/posts/view/} + ${post.id}">View</a>
-                                        <a th:href="@{/posts/edit/} + ${post.id}" >Edit</a>
-                                        <a th:href="@{/posts/delete/} + ${post.id}" >Delete</a>
+                                        <a th:href="@{/post/view/} + ${post.id}">View</a>
+                                        <a th:href="@{/post/edit/} + ${post.id}" >Edit</a>
+                                        <a th:href="@{/post/delete/} + ${post.id}" >Delete</a>
                                     </td>
                                 </tr>
                             </tbody>

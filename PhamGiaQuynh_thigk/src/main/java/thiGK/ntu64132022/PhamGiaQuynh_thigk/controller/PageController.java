@@ -60,7 +60,6 @@ public class PageController {
         return "pageview";
     }
 
-    // Show delete confirmation
     @GetMapping("/page/delete/{id}")
     public String showDeleteForm(@PathVariable("id") int id, ModelMap model) {
         Page page = Pages.stream()

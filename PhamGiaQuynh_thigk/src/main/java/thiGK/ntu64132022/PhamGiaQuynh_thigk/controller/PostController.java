@@ -43,7 +43,7 @@ public class PostController {
     }
     @GetMapping("/post/all")
     public String postall(ModelMap modelmap){
-        modelmap.addAttribute("Posts", Posts);
+        modelmap.addAttribute("posts", Posts);
         return "postall";
     }
 
@@ -60,21 +60,20 @@ public class PostController {
         return "postview";
     }
 
-    // Show delete confirmation
     @GetMapping("/post/delete/{id}")
     public String showDeleteForm(@PathVariable("id") int id, ModelMap model) {
         Post Post = Posts.stream()
                         .filter(p -> p.getId() == id)
                         .findFirst()
                         .orElseThrow(() -> new IllegalArgumentException("Invalid Post Id:" + id));
-        model.addAttribute("Post", Post);
-        return "Postdelete";
+        model.addAttribute("post", Post);
+        return "postdelete";
     }
 
 
-    @PostMapping("/Post/delete/{id}")
+    @PostMapping("/post/delete/{id}")
     public String deletePost(@PathVariable("id") int id) {
         Posts.removeIf(Post -> Post.getId() == id);
-        return "redirect:/Post/all";
+        return "redirect:/post/all";
     }
 }
