@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Page</title>
+</head>
+<body>
+    <h2>Delete Page</h2>
+    <p>Are you sure you want to delete this page?</p>
+    <p><strong>ID:</strong> <span th:text="${page.id}"></span></p>
+    <p><strong>Page Name:</strong> <span th:text="${page.pageName}"></span></p>
+    
+    <form th:action="@{/page/delete/} + ${page.id}" method="post">
+        <button type="submit">Delete</button>
+        <a th:href="@{/page/all}">Cancel</a>
+    </form>
+</body>
+</html>
